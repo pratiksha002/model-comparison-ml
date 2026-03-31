@@ -32,7 +32,7 @@ for name, model in models.items():
 
     pipeline = Pipeline([
         ("preprocessing", SmartPreprocessor()),
-        ("models", model)
+        ("model", model)
     ])
 
     pipeline.fit(x_train, y_train)
@@ -62,5 +62,15 @@ print(f"\nBest Model : {best_model_name}")
 
 #feature names
 feature_names = best_pipeline.named_steps["preprocessing"].get_feature_names_out()
-print("\nFinal Feayures used:")
+print("\nFinal Features used:")
 print(feature_names)
+
+from src.explain import get_feature_importance
+
+print("\nFeature Importance:")
+
+importance = get_feature_importance(best_pipeline)
+
+if importance:
+    for feature, score in importance:
+        print(f"{feature}: {score:.4f}")
