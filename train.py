@@ -60,6 +60,11 @@ best_pipeline = trained_pipelines[best_model_name]
 
 print(f"\nBest Model : {best_model_name}")
 
+import os
+import joblib
+os.makedirs("models", exist_ok=True)
+joblib.dump(best_pipeline, "models/best_model.pkl")
+
 #feature names
 feature_names = best_pipeline.named_steps["preprocessing"].get_feature_names_out()
 print("\nFinal Features used:")
@@ -88,5 +93,4 @@ print(shap_values.values)
 import shap
 shap.plots.waterfall(shap_values[0])
 
-import joblib
-joblib.dump(best_pipeline, "models/best_model.pkl")
+

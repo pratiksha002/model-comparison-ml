@@ -18,8 +18,13 @@ def predict(data: dict):
         prediction = model.predict(input_data)
 
         return {
-        "prediction": float(prediction[0])
-        }
+        "success": True,
+        "prediction": float(prediction[0]),
+        "model_used": "XGBoost",
+        "message": "Prediction generated successfully"
+         }
 
     except Exception as e:
-        return {"error": str(e)}
+        return {"success": False,
+                "error": str(e)
+                }
