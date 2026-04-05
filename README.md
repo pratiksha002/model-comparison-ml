@@ -75,6 +75,7 @@ Best model is selected based on **R² score**.
 ---
 
 ##📤 Sample API Output
+---
 {
   "success": true,
   "prediction": 3.51,
