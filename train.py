@@ -87,3 +87,6 @@ print(shap_values.values)
 
 import shap
 shap.plots.waterfall(shap_values[0])
+
+import joblib
+joblib.dump(best_pipeline, "models/best_model.pkl")
