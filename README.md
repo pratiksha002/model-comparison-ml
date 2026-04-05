@@ -61,7 +61,7 @@ Best model is selected based on **R² score**.
 
 ## 📊 Sample API Input
 
-```json
+``json
 {
   "Year": 2015,
   "Present_Price": 5.5,
@@ -72,6 +72,8 @@ Best model is selected based on **R² score**.
   "Owner": 0
 }
 
+---
+
 ##📤 Sample API Output
 {
   "success": true,
@@ -79,7 +81,7 @@ Best model is selected based on **R² score**.
   "model_used": "XGBoost",
   "message": "Prediction generated successfully"
 }
-
+----
 ##🛠️ Tech Stack
 Python
 Pandas, NumPy
@@ -89,6 +91,7 @@ FastAPI
 SHAP
 Joblib
 
+----
 model_comparison_project/
 │
 ├── data/
@@ -107,6 +110,7 @@ model_comparison_project/
 ├── requirements.txt
 └── README.md
 
+---
 ##▶️ How to Run
 1. Clone the repository
 git clone <your-repo-link>
@@ -119,20 +123,27 @@ python train.py
 uvicorn app:app --reload
 5. Access API Docs
 
+---
 Open in browser:
 
 http://127.0.0.1:8000/docs
+
+---
 🧠 Key Learnings
 Building end-to-end ML pipelines
 Avoiding data leakage using pipelines
 Importance of model comparison
 Understanding model behavior with explainability
 Deploying ML models as APIs
+
+---
 🚀 Future Improvements
 Add frontend UI (React / Streamlit)
 Deploy API to cloud (Render / AWS)
 Add logging & monitoring
 Use larger datasets for better generalization
+
+---
 📌 Conclusion
 
 This project demonstrates how to transition from building ML models to deploying complete ML systems that are usable in real-world applications.
