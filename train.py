@@ -74,3 +74,16 @@ importance = get_feature_importance(best_pipeline)
 if importance:
     for feature, score in importance:
         print(f"{feature}: {score:.4f}")
+
+
+from src.shap_explain import explain_prediction
+
+sample = x_test.iloc[[0]]
+
+shap_values = explain_prediction(best_pipeline, sample)
+
+print("\nSHAP values:")
+print(shap_values.values)
+
+import shap
+shap.plots.waterfall(shap_values[0])
